@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script src="lib/codemirror.js"></script>
+        <link rel="stylesheet" href="lib/codemirror.css">
+        <script src="mode/clike/clike.js"></script>
+        <script src="base64/base64.js"></script>
+    </head>
+    
+    <body width="100%" height="3000" leftmargin=0 topmargin=0 rightmargin=0 bottommargin=0 onresize="handleResize()">
+        <script type="text/javascript" charset="utf-8">
+            var base64 = new WebSafeBase64();
+            function changeHandler(instance, changeObj)
+            {
+                var saveCommandUrl = "command://save";
+                self.location.href = saveCommandUrl;
+                
+                handleResize();
+            }
+        
+        function handleResize()
+        {
+            /*
+            var contentHeight = document.body.clientHeight;
+            var lineCount = myCodeMirror.lineCount();
+            var textHeight = myCodeMirror.charCoords({line: lineCount, ch: 0}).bottom;
+            if ( textHeight > contentHeight )
+            {
+                myCodeMirror.setSize("100%", textHeight + 10);
+            }
+             */
+        }
+        
+            var myCodeMirror = CodeMirror(document.body, {lineNumbers: true, matchBrackets: true, indentUnit: 4, lineWrapping: true, mode: "text/x-csrc", viewportMargin: Infinity});
+        
+            myCodeMirror.on("change", changeHandler);
+            
+            function setCodeText(encodedText)
+            {
+                myCodeMirror.off("change", changeHandler);
+                var text = decodeURIComponent(encodedText);
+                myCodeMirror.getDoc().setValue(text);
+                myCodeMirror.refresh();
+                
+                handleResize();
+
+                myCodeMirror.on("change", changeHandler);
+            }
+        
+            function getCodeText()
+            {
+                return myCodeMirror.getDoc().getValue();
+            }
+            
+        </script>
+    </body>
+    
+</html>
