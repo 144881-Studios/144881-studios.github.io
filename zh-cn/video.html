@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>video</title>
+    </head>
+    <body>
+        <div style="text-align:center;">
+            <button type="button" onclick="playPause()">start</button>
+            <button type="button" onclick="p1080()">1080p</button>
+            <button type="button" onclick="p720()">720p</button>
+            <button type="button" onclick="p540()">540p</button>
+            <button type="button" onclick="p360()">360p</button>
+            <br />
+            <video id="video1" width="720" style="margin-top:15px;">
+                <source src="/example/html5/mov_bbb.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <script type="text/javascript">
+            var myVideo=document.getElementById("video1");
+            function playPause()
+            {
+                if (myVideo.paused)
+                    myVideo.play();
+                else
+                    myVideo.pause();
+            }
+            function p1080()
+            {
+                myVideo.width=1080;
+            }
+            function p720()
+            {
+                myVideo.width=720;
+            }
+            function p540()
+            {
+                myVideo.width=540;
+            }
+            function p360()
+            {
+                myVideo.width=360;
+            }
+        </script>
+    </body>
+</html>
