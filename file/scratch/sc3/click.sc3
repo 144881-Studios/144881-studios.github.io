@@ -1,0 +1,18 @@
+[variables]
+set (scores) to [0]
+show (scores)
+[/variables]
+[background]
+[costume id=1]
+ac(0,0;479;359;#00FFFFFF)
+[/costume]
+[/background]
+[sprite id=1 name=Cat x=0 y=0 d=90 rotate=0 size=100 isShown=true]
+[costume id=1 type=bitmap]
+url(https://cdn2.scratch.mit.edu/get_image/user/default_32x32.png)
+[/costume]
+[scratchblocks]
+when the sprite clicked
+change [scores v] by [1]
+[/scratchblocks]
+[/sprite]
