@@ -1,0 +1,11 @@
+[background]
+[costume id=1]
+ac(0,0;479,359;#00FFFFFF)
+[/costume]
+[scratchblocks x=0 y=0]
+when green flag clicked
+forever
+ask (answer) and wait
+end
+[/scratchblock]
+[/background]
