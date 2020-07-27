@@ -1,4 +1,3 @@
-<title>144881 on GitHub</title>  
 # A 144881 Studios website on GitHub v0.0.5.3592601  
 ### Choose a language  
 [简体中文](https://cheny0y0.github.io/144881/zh-cn)  
